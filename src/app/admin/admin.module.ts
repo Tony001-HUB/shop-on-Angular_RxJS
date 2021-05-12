@@ -8,6 +8,7 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { OrdersPageComponent } from './orders-page/orders-page.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     AddPageComponent,
     DashboardPageComponent,
     EditPageComponent,
-    OrdersPageComponent
+    OrdersPageComponent,
   ],
   imports: [
     CommonModule,

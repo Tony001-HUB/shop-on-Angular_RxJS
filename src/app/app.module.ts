@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
-import { MainPageComponent } from './shared/main-page/main-page.component';
-import { ProductPageComponent } from './shared/product-page/product-page.component';
-import { CartPageComponent } from './shared/cart-page/cart-page.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { ProductPageComponent } from './product-page/product-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CartPageComponent } from './shared/cart-page/cart-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
