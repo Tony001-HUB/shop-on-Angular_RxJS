@@ -23,7 +23,7 @@ export class AuthService {
 
   private setToken(response): void {
     if (response) {
-      const expData = new Date(new Date().getTime() + +response.expiresIn * 1000);
+      const expData = new Date( new Date().getTime() + +response.expiresIn * 1000);
       localStorage.setItem('fb-token-exp', expData.toString());
       localStorage.setItem('fb-token', response.idToken);
     } else {
@@ -32,8 +32,8 @@ export class AuthService {
   }
 
   get token(): any {
-    const expData = new Date(localStorage.getItem('fb-token-exp'));
-    if (new Date() <= expData) {
+    const expDate = new Date(localStorage.getItem('fb-token-exp'));
+    if ( new Date() > expDate ) {
       this.logout();
       return null;
     }
@@ -44,7 +44,7 @@ export class AuthService {
     this.setToken(null);
   }
 
-  isAuthenticated(): any{
+  isAuthenticated(): any {
     return !!this.token; /*преобразуем токен к bool и если там есть иинфа то true*/
   }
 

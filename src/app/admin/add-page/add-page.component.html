@@ -1,1 +1,46 @@
-<p>add-page works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Login as admin</h2>
+
+  <div class="form-control">
+    <label for="type">Type</label>
+    <input id="type" type="type" formControlName="type">
+    <div *ngIf="form.get('type').touched && form.get('type').invalid" class="validation">
+      <small *ngIf="form.get('type').errors.required">Chose type of product</small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="title">Name</label>
+    <input id="title" type="title" formControlName="title">
+    <div *ngIf="form.get('title').touched && form.get('title').invalid" class="validation">
+      <small *ngIf="form.get('title').errors.required">Enter name of product</small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="photo">Img</label>
+    <input id="photo" type="photo" formControlName="photo">
+    <div *ngIf="form.get('photo').touched && form.get('photo').invalid" class="validation">
+      <small *ngIf="form.get('photo').errors.required">Load product img</small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="info">Information</label>
+    <input id="info" type="info" formControlName="info">
+    <div *ngIf="form.get('info').touched && form.get('info').invalid" class="validation">
+      <small *ngIf="form.get('info').errors.required">Chose type of product</small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="price">Price</label>
+    <input id="price" type="price" formControlName="price">
+    <div *ngIf="form.get('price').touched && form.get('price').invalid" class="validation">
+      <small *ngIf="form.get('price').errors.required">Enter price of product</small>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary btn-block"
+    [disabled]="form.invalid || submitted">
+    Login
+  </button>
+</form>
