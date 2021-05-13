@@ -1,9 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <h2>Login as admin</h2>
+  <h1 class="text-center">Add new product</h1>
 
   <div class="form-control">
     <label for="type">Type</label>
-    <input id="type" type="type" formControlName="type">
+    <select formControlName="type" id="type">
+      <option value="Phone">Phone</option>
+      <option value="Phone">Tablet</option>
+      <option value="Phone">Laptop</option>
+    </select>
     <div *ngIf="form.get('type').touched && form.get('type').invalid" class="validation">
       <small *ngIf="form.get('type').errors.required">Chose type of product</small>
     </div>
@@ -16,18 +20,12 @@
     </div>
   </div>
   <div class="form-control">
-    <label for="photo">Img</label>
-    <input id="photo" type="photo" formControlName="photo">
-    <div *ngIf="form.get('photo').touched && form.get('photo').invalid" class="validation">
-      <small *ngIf="form.get('photo').errors.required">Load product img</small>
-    </div>
+    <label for="type">Img</label>
+    <quill-editor formControlName="photo"></quill-editor>
   </div>
   <div class="form-control">
-    <label for="info">Information</label>
-    <input id="info" type="info" formControlName="info">
-    <div *ngIf="form.get('info').touched && form.get('info').invalid" class="validation">
-      <small *ngIf="form.get('info').errors.required">Chose type of product</small>
-    </div>
+    <label for="type">Information</label>
+    <quill-editor formControlName="info"></quill-editor>
   </div>
   <div class="form-control">
     <label for="price">Price</label>
@@ -41,6 +39,6 @@
     type="submit"
     class="btn btn-primary btn-block"
     [disabled]="form.invalid || submitted">
-    Login
+    Add product
   </button>
 </form>
