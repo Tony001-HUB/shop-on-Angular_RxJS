@@ -1,1 +1,4 @@
-<p>main-page works!</p>
+<div *ngIf="products$ | async as products">
+  <app-product [product]="product" *ngFor="let product of products">
+  </app-product>
+</div>

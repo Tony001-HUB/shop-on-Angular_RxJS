@@ -21,6 +21,17 @@ export class ProductService {
           date: new Date(product.date)
         };
       })).subscribe();
-
+  }
+  getAllProduct(): any {
+    return this.http.get(`${environment.fbDbUrl}/products.json`)
+      .pipe(map(response => {
+          return Object
+            .keys(response)
+            .map( key => ({
+            ...response[key],
+              id: key,
+              date: new Date(response[key].date)
+          }));
+      }));
   }
 }

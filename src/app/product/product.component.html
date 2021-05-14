@@ -1,0 +1,18 @@
+<div class="text-center">
+  <h2>{{product.title}}</h2>
+  <div style="width: 230px ; height: 320px">
+    <quill-view-html [content]="product['photo']"></quill-view-html>
+  </div>
+
+  <h2>Price: {{product["price"]}} $</h2>
+
+  <button
+    [routerLink]="['/product', product.id]" class="btn btn-dark">
+    Open
+  </button>
+
+  <button [routerLink]="['/cart']" class="btn btn-dark">
+    Add to cart
+  </button>
+</div>
+
