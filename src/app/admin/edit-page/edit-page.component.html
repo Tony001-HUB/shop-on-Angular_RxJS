@@ -1,1 +1,50 @@
-<p>edit-page works!</p>
+<div *ngIf="form; else loading">
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h1 class="text-center">Update product</h1>
+
+  <div class="form-control">
+    <label for="type">Type</label>
+    <select formControlName="type" id="type">
+      <option value="Phone">Phone</option>
+      <option value="Phone">Tablet</option>
+      <option value="Phone">Laptop</option>
+    </select>
+    <div *ngIf="form.get('type').touched && form.get('type').invalid" class="validation">
+      <small *ngIf="form.get('type').errors.required">Chose type of product</small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="title">Name</label>
+    <input id="title" type="title" formControlName="title">
+    <div *ngIf="form.get('title').touched && form.get('title').invalid" class="validation">
+      <small *ngIf="form.get('title').errors.required">Enter name of product</small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="type">Img</label>
+    <quill-editor formControlName="photo"></quill-editor>
+  </div>
+  <div class="form-control">
+    <label for="type">Information</label>
+    <quill-editor formControlName="info"></quill-editor>
+  </div>
+  <div class="form-control">
+    <label for="price">Price</label>
+    <input id="price" type="price" formControlName="price">
+    <div *ngIf="form.get('price').touched && form.get('price').invalid" class="validation">
+      <small *ngIf="form.get('price').errors.required">Enter price of product</small>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary btn-block"
+    [disabled]="form.invalid || submitted">
+    Update product
+  </button>
+</form>
+</div>
+
+<ng-template #loading>
+  <p class="text-center">Loading...</p>
+</ng-template>

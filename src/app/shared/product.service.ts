@@ -45,4 +45,12 @@ export class ProductService {
         };
       }));
   }
+
+  removeProductById(id): any {
+    return this.http.delete(`${environment.fbDbUrl}/products/${id}.json`);
+  }
+
+  updateProduct(product: Product): any {
+    return this.http.patch(`${environment.fbDbUrl}/products/${product.id}.json`, product)
+  }
 }
