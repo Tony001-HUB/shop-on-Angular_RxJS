@@ -10,6 +10,7 @@ import {Subscribable, Subscription} from 'rxjs';
 export class DashboardPageComponent implements OnInit {
 
   products = [];
+  productName;
   constructor(private productService: ProductService ) { }
 
   ngOnInit(): void {
