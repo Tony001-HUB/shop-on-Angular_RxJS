@@ -5,8 +5,8 @@
     <label for="type">Type</label>
     <select formControlName="type" id="type">
       <option value="Phone">Phone</option>
-      <option value="Phone">Tablet</option>
-      <option value="Phone">Laptop</option>
+      <option value="Tablet">Tablet</option>
+      <option value="Laptop">Laptop</option>
     </select>
     <div *ngIf="form.get('type').touched && form.get('type').invalid" class="validation">
       <small *ngIf="form.get('type').errors.required">Chose type of product</small>

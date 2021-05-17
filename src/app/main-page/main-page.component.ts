@@ -10,7 +10,7 @@ export class MainPageComponent implements OnInit {
 
   products$;
 
-  constructor(private productService: ProductService) { }
+  constructor(public productService: ProductService) { }
 
   ngOnInit(): void {
     this.products$ = this.productService.getAllProduct();
