@@ -11,7 +11,7 @@
     Open
   </button>
 
-  <button [routerLink]="['/cart']" class="btn btn-dark">
+  <button [routerLink]="['/cart']" class="btn btn-dark" (click)="addProductToCart(product)">
     Add to cart
   </button>
 </div>
