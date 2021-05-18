@@ -1,12 +1,13 @@
-<div class="text-center">
-  <h2>{{product.title}}</h2>
-  <div>
+<div>
+  <h2 class="text-center">{{product.title}}</h2>
+
+  <div style="height: 233px; width: 170px; margin-left: 20px">
     <quill-view-html [content]="product['photo']"></quill-view-html>
   </div>
 
-  <h2>Price: {{product["price"]}} $</h2>
+  <h2 class="text-center">Price: {{product["price"]}} $</h2>
 
-  <button
+  <button style="margin-bottom: 10px"
     [routerLink]="['/product', product.id]" class="btn btn-dark">
     Open
   </button>

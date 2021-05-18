@@ -1,4 +1,4 @@
-<div class="flex-center" *ngIf="products$ | async as products">
-  <app-product [product]="product" *ngFor="let product of products | sorting: productService.type">
+<div class="grid-container" *ngIf="products$ | async as products">
+  <app-product class="flex-center" [product]="product" *ngFor="let product of products | sorting: productService.type">
   </app-product>
 </div>

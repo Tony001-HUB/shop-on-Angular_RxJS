@@ -43,7 +43,5 @@ export class AddPageComponent implements OnInit {
 
     this.productService.create(product);
     this.form.reset();
-    this.submitted = false;
-    this.router.navigate(['/']);
   }
 }

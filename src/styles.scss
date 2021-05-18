@@ -49,8 +49,22 @@ img {
   padding: 0 2rem;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-row-gap: 30px;
+}
+
 .flex-center {
   display: flex;
+  justify-content: center;
+}
+
+.grid-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   justify-content: center;
 }
 
@@ -94,7 +108,7 @@ img {
   transition: opacity 0.2s ease-in;
   outline: none;
   border-radius: .5rem;
-
+  margin-bottom: 10px;
   &:disabled {
     cursor: not-allowed;
     background: var(--light-color);
