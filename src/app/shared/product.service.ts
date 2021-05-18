@@ -15,7 +15,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   create(product): any {
-    this.http
+    return this.http
       .post(`${environment.fbDbUrl}/products.json`, product)
       .pipe(map( (response: FbResponse) => {
         return{
@@ -54,7 +54,7 @@ export class ProductService {
   }
 
   updateProduct(product: Product): any {
-    return this.http.patch(`${environment.fbDbUrl}/products/${product.id}.json`, product)
+    return this.http.patch(`${environment.fbDbUrl}/products/${product.id}.json`, product);
   }
 
   setType(type): void {
