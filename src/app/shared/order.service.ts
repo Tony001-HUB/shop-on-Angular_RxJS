@@ -23,7 +23,7 @@ export class OrderService {
       }));
   }
 
-  getAllProduct(): any {
+  getAllOrder(): any {
     return this.http.get(`${environment.fbDbUrl}/orders.json`)
       .pipe(map(response => {
         return Object
@@ -36,7 +36,7 @@ export class OrderService {
       }));
   }
 
-  removeProductById(id): any {
+  removeOrderById(id): any {
     return this.http.delete(`${environment.fbDbUrl}/orders/${id}.json`);
   }
 

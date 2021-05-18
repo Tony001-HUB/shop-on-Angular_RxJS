@@ -15,7 +15,9 @@
       <a (click)="setType('Cart')" [routerLink]="['/cart']">Cart</a>
     </li>
     <li routerLinkActive="active">
-      <a [routerLink]="['/admin']">Login as admin</a>
+      <div *ngIf="isAuthAsAdmin; else login">
+        <a [routerLink]="['/admin']">Login as admin</a>
+      </div>
     </li>
   </ul>
 </nav>
@@ -25,4 +27,8 @@
 
   </router-outlet>
 </div>
+
+<ng-template #login>
+  <a [routerLink]="['/admin/login']">Login as admin</a>
+</ng-template>
 

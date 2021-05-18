@@ -14,14 +14,15 @@ export class OrdersPageComponent implements OnInit {
   orders = [];
 
   ngOnInit(): void {
-    this.orderService.getAllProduct().subscribe( products => {
-      this.orders = products;
+    this.orderService.getAllOrder().subscribe( orders => {
+      this.orders = orders;
+      console.log(orders);
     });
   }
 
   remove(id): void {
-    this.orderService.removeProductById(id).subscribe( () => {
-      this.orders = this.orders.filter(product => product.id !== id);
+    this.orderService.removeOrderById(id).subscribe( () => {
+      this.orders = this.orders.filter(order => order.id !== id);
     });
   }
 

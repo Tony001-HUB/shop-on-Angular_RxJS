@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { AuthService } from '../auth.service';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -10,10 +11,11 @@ import { ProductService } from '../product.service';
 export class MainLayoutComponent implements OnInit {
 
   type = 'Phone';
-
-  constructor(private router: Router, private productService: ProductService) { }
+  isAuthAsAdmin = true;
+  constructor(private router: Router, private productService: ProductService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.isAuthAsAdmin = this.authService.isAuthenticated();
   }
 
   setType(type): void {
